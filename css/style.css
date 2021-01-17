@@ -504,7 +504,7 @@ span.price{
   float:right;
   color:grey;
 }
-#billing-section ,div.formcontainer{
+#billing-section ,#form-container{
   display: none;
 }
 

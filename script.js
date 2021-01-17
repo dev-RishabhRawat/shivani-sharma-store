@@ -5,6 +5,7 @@ const banner = document.getElementById("banner");
 const productContainer = document.getElementById("details");
 const detailedPage = document.getElementById("detailedPage");
 const backButton = document.querySelector('.fa-arrow-alt-circle-left');
+let imgSrc,product_name,product_price;
 backButton.addEventListener('click',()=>{
  document.location.reload();
  console.log('clicked');
@@ -36,11 +37,57 @@ const showDescription = (e)=>{
    backButton.style.display='block'; 
    buyBtn.style.display = 'block';  
 }
+function getPrice(imgSrc)
+{
+  switch (imgSrc) {
+    case './images/bracelete.jpeg':
+      product_price = 300;
+      product_name = 'Bracelet';
+      break;
+    case './images/necklace-2.jpg':
+    product_price =800;
+    product_name = 'Necklace';
+    break;
+    case './images/nose-ring.jpeg':
+      product_price =400;
+      product_name = 'EARRINGS';
+    break;
+    case './images/earrings.jpg':
+      product_price =100;
+      product_name = 'Nose Ring';
+    break;
+    case './images/earrings-2-img.jpg':
+      product_price =600;
+      product_name = 'Golden Earrings';
+    break;
+    case './images/long-nacklace.jpg':
+      product_price =600;
+      product_name = 'Long Necklace';
+    break;
+        
+    default:
+      break;
+  }
+}
 const checkout = ()=>{
   console.log('button clicked');
-  console.log(document.activeElement);
+  // console.log(document.activeElement.parentElement.lastElementChild.firstElementChild);
+  imgSrc = document.activeElement.parentElement.lastElementChild.firstElementChild.getAttribute('src');
+  console.log(imgSrc);
+  getPrice(imgSrc);
+  console.log(product_price);
+  console.log(product_name);
+  document.getElementById('checkout-item').innerText = product_name;
+  document.getElementById('checkout-item-price').innerHTML = product_price;
+  let gst = (product_price*28)/100;
+  document.getElementById('gst').innerHTML= gst;
+  document.getElementById('checkout-total').innerHTML = product_price + gst;
   document.getElementById('billing-section').style.display = 'block';
-  document.querySelector('.formcontainer').style.display = 'block';
+  document.getElementById('form-container').style.display = 'block';
+  document.getElementById('detailedPage').style.display = 'none';
+  document.getElementById('feature').style.display = 'none';
+  document.getElementById('service').style.display = 'none';
+  document.getElementById('testimonial').style.display = 'none';
 }
 
 menuBtn.addEventListener("click", () => {
