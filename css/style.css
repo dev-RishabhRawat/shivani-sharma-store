@@ -154,7 +154,7 @@ nav ul li a {
 
 div.product_container {
   padding:70px ;
-  
+  display: flex;
   width: 100vw;                                           
   display: flex;
   justify-content: space-evenly;
@@ -205,6 +205,7 @@ background-color: #009688;
   margin-top: -10px;
 }
 #detailedPage .fa-arrow-alt-circle-left{
+  display: none;
   position: absolute;
   top: 10%;
   left: 5%;
@@ -214,6 +215,17 @@ background-color: #009688;
   border: 2px solid #fff;
   border-radius: 10px;
   transition: all ease 1s;
+}
+#detailedPage a{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#detailedPage a:hover{
+  background-color: #fff;
+  color: #000000;
 }
 #detailedPage div {
    
@@ -294,43 +306,7 @@ div.feature-box .feature-img img{
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3),0 2px 10px rgba(0, 0, 0, 0.3);
 }
-/* 
-.feature-img{
 
-  flex-basis:50%;
-  margin:auto;
- 
-}
-.feature-img img{
-  width: 70%;
-  border-radius: 10px;
-}
-.feature h1{
-  text-align: left;
-  margin-bottom: 10px;
-  font-weight: 100;
-  color:#009688 ;
-}
-.feature-desc{
-  display:flex;
-  align-items: center;
-  margin-bottom: 40px;
-}
-.feature-icon .fa{
-width:50px;
-height:50px;
-font-size:30px;
-line-height: 50px;
-border-radius: 8px;
-color:#009688;
-border:1px solid #009688;
-
-}
-.feature-text p{
-  padding: 0 20px;
-  text-align: initial;
-} 
- */
 @media screen and (max-width:770px){
 
   .title-text h1{
@@ -478,4 +454,59 @@ font-size:20px;
   .testimonial-col{
     flex-basis:100%; 
   }
+}
+/* styling for billing section */
+
+.fields{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-around;
+
+}
+.fields div{
+  margin-right: 10px;
+}
+label{
+  margin:15px;
+}
+.formcontainer{
+  margin:10px;
+  background-color: #efffc9;
+  padding: 5px 20px 15px 20px;
+  border:1px solid rgb(191, 246, 250);
+  border-radius: 3px; 
+}
+input{
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border:1px solid #ccc;
+  border-radius: 3px;
+}
+label{
+  margin-left: 20px;
+  display: block;
+}
+.icon-formcontainer{
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size:24px;
+}
+.Checkout:hover{
+background-color: #45a048;
+}
+a{
+  color:black;
+}
+span.price{
+  float:right;
+  color:grey;
+}
+
+@media(max-width: 800px){
+.fields{
+    flex-direction: column-reverse;
+}
 }
