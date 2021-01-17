@@ -504,6 +504,9 @@ span.price{
   float:right;
   color:grey;
 }
+#billing-section ,div.formcontainer{
+  display: none;
+}
 
 @media(max-width: 800px){
 .fields{

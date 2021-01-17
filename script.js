@@ -39,7 +39,8 @@ const showDescription = (e)=>{
 const checkout = ()=>{
   console.log('button clicked');
   console.log(document.activeElement);
- 
+  document.getElementById('billing-section').style.display = 'block';
+  document.querySelector('.formcontainer').style.display = 'block';
 }
 
 menuBtn.addEventListener("click", () => {
